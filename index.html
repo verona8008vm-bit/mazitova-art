@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MazitovaArt — Художественная студия Вероники Мазитовой</title>
+<title>MazitovaArt — Художественная стувая Вероники Мазитовой</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:       #FAF6F0; /* Светлый нежный фон */
-    --bg2:      #F3ECE3; /* Чуть более темный кремовый для блоков */
-    --primary:  #4A354F; /* Благородный глубокий фиолетово-коричневый для текста */
-    --gold:     /*cite: 1*/#B88738; /* Приглушенное золото */
-    --text:     #2D252E; /* Основной текст */
-    --muted:    #6E6270; /* Приглушенный текст */
+    --bg:       #FAF6F0;
+    --bg2:      #F3ECE3;
+    --primary:  #4A354F;
+    --gold:     #B88738;
+    --text:     #2D252E;
+    --muted:    #6E6270;
     --border:   rgba(184, 135, 56, 0.25);
   }
 
@@ -22,14 +22,11 @@
 
   body {
     background-color: var(--bg);
-    /* Встраиваем нежные разноцветные брызги и кыргызские узоры прямо в фон с помощью легкой графики */
     background-image: 
-      /* Нежные размытые брызги краски */
-      radial-gradient(circle at 10% 20%, rgba(218, 172, 224, 0.15) 0%, transparent 40%),
-      radial-gradient(circle at 90% 40%, rgba(163, 210, 230, 0.12) 0%, transparent 35%),
-      radial-gradient(circle at 40% 80%, rgba(240, 220, 160, 0.15) 0%, transparent 30%),
-      radial-gradient(circle at 80% 85%, rgba(220, 160, 160, 0.12) 0%, transparent 40%),
-      /* Едва заметный традиционный кыргызский узор кочкор-мүйүз */
+      radial-gradient(circle at 10% 20%, rgba(218, 172, 224, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 90% 40%, rgba(163, 210, 230, 0.1) 0%, transparent 35%),
+      radial-gradient(circle at 40% 80%, rgba(240, 220, 160, 0.12) 0%, transparent 30%),
+      radial-gradient(circle at 80% 85%, rgba(220, 160, 160, 0.1) 0%, transparent 40%),
       url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100" opacity="0.03"><path d="M50 10 C35 10 30 25 35 35 C40 45 50 40 50 30 C50 40 60 45 65 35 C70 25 65 10 50 10 Z M50 35 L50 90 M50 60 C30 60 20 75 30 85 C40 95 45 80 45 70 C45 80 50 95 60 85 C70 75 60 60 50 60 Z" fill="none" stroke="%23B88738" stroke-width="2"/></svg>');
     color: var(--text);
     font-family: 'Inter', sans-serif;
@@ -38,7 +35,6 @@
     overflow-x: hidden;
   }
 
-  /* ── НАВИГАЦИЯ ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
@@ -47,156 +43,73 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-brand {
-    display: flex; align-items: center; gap: 0.8rem; text-decoration: none;
-  }
-  .nav-logo-img {
-    width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
-    border: 1px solid var(--gold);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem; font-weight: 500; letter-spacing: 0.05em;
-    color: var(--primary);
-  }
+  .nav-brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+  .nav-logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--gold); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; letter-spacing: 0.05em; color: var(--primary); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    color: var(--muted); font-size: 0.85rem; letter-spacing: 0.05em;
-    text-transform: uppercase; text-decoration: none; font-weight: 500;
-    transition: color 0.3s;
-  }
+  .nav-links a { color: var(--muted); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* ── ГЛАВНЫЙ ЭКРАН ── */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center; position: relative;
-    padding: 7rem 4rem 3rem 4rem;
-  }
-  .hero-grid {
-    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem;
-    align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;
-  }
-  .hero-eyebrow {
-    font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 1rem; font-weight: 600;
-  }
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 4.8vw, 4.2rem);
-    font-weight: 400; line-height: 1.15;
-    color: var(--primary); margin-bottom: 1.5rem;
-  }
+  #hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding: 7rem 4rem 3rem 4rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 600; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4.8vw, 4.2rem); font-weight: 400; line-height: 1.15; color: var(--primary); margin-bottom: 1.5rem; }
   .hero-title em { font-style: italic; color: var(--gold); }
-  .hero-sub {
-    font-size: 1.05rem; color: var(--muted); max-width: 540px; margin-bottom: 2.5rem;
-  }
+  .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 540px; margin-bottom: 2.5rem; }
   .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
   
-  .hero-image-wrapper {
-    position: relative; border: 1px solid var(--border); padding: 12px; background: #ffffff;
-    box-shadow: 0 15px 35px rgba(110,98,112,0.15);
-  }
-  .hero-img { width: 100%; height: auto; display: block; background: #eaeaea; }
-  .hero-tag {
-    position: absolute; bottom: -12px; right: 20px; background: var(--primary);
-    color: #ffffff; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;
-    padding: 0.4rem 1.2rem; font-weight: 500;
-  }
+  .hero-image-wrapper { position: relative; border: 1px solid var(--border); padding: 12px; background: #ffffff; box-shadow: 0 15px 35px rgba(110,98,112,0.15); }
+  .hero-img { width: 100%; height: auto; display: block; }
+  .hero-tag { position: absolute; bottom: -12px; right: 20px; background: var(--primary); color: #ffffff; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.4rem 1.2rem; font-weight: 500; }
 
-  /* КНОПКИ */
-  .btn {
-    display: inline-block; padding: 1rem 2.2rem;
-    font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
-    text-decoration: none; transition: all 0.3s; cursor: pointer; border: none;
-    font-family: 'Inter', sans-serif; text-align: center;
-  }
-  .btn-primary {
-    background: var(--primary); color: #ffffff;
-    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-  }
+  .btn { display: inline-block; padding: 1rem 2.2rem; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; font-family: 'Inter', sans-serif; text-align: center; }
+  .btn-primary { background: var(--primary); color: #ffffff; clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%); }
   .btn-primary:hover { background: var(--gold); transform: translateY(-2px); }
-  .btn-outline {
-    border: 1px solid var(--primary); color: var(--primary); background: transparent;
-  }
+  .btn-outline { border: 1px solid var(--primary); color: var(--primary); background: transparent; }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); background: rgba(184,135,56,0.05); }
 
-  /* ── СЕКЦИИ ── */
   section { padding: 6rem 2rem; }
   .container { max-width: 1100px; margin: 0 auto; }
-
-  .section-label {
-    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.5rem; font-weight: 600;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 3.8vw, 3rem);
-    font-weight: 400; line-height: 1.2; color: var(--primary);
-  }
+  .section-label { font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; font-weight: 600; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.8vw, 3rem); font-weight: 400; line-height: 1.2; color: var(--primary); }
   .section-title em { font-style: italic; color: var(--gold); }
-  .divider {
-    width: 70px; height: 1px;
-    background: linear-gradient(to right, var(--gold), transparent);
-    margin: 1.5rem 0;
-  }
+  .divider { width: 70px; height: 1px; background: linear-gradient(to right, var(--gold), transparent); margin: 1.5rem 0; }
 
-  /* ── ОБ АВТОРЕ ── */
   #about { background: rgba(243, 236, 227, 0.6); }
-  .about-grid {
-    display: grid; grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem; align-items: center;
-  }
-  .about-text p {
-    color: var(--text); line-height: 1.8; margin-bottom: 1.2rem; font-size: 1rem;
-  }
-  
+  .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
+  .about-text p { color: var(--text); line-height: 1.8; margin-bottom: 1.2rem; font-size: 1rem; }
   .about-visual { display: flex; flex-direction: column; gap: 1.5rem; }
   .about-img-box { border: 1px solid var(--border); padding: 8px; background: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
   .about-img { width: 100%; height: auto; display: block; }
-
   .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
   .stat-box { border: 1px solid var(--border); padding: 1.2rem; text-align: center; background: #ffffff; }
   .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--primary); font-weight: 500; }
   .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
 
-  /* ── УСЛУГИ ── */
-  #services .services-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem; margin-top: 3rem;
-  }
-  .service-card {
-    background: #ffffff; padding: 2.5rem 2rem;
-    border: 1px solid var(--border); box-shadow: 0 8px 20px rgba(110,98,112,0.04);
-    transition: all 0.3s;
-  }
+  #services .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .service-card { background: #ffffff; padding: 2.5rem 2rem; border: 1px solid var(--border); box-shadow: 0 8px 20px rgba(110,98,112,0.04); transition: all 0.3s; }
   .service-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 12px 30px rgba(110,98,112,0.08); }
   .service-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
   .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 0.8rem; color: var(--primary); font-weight: 500; }
   .service-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
   .service-price { margin-top: 1.5rem; font-size: 0.85rem; letter-spacing: 0.05em; color: var(--gold); font-weight: 600; }
 
-  /* ── ГАЛЕРЕЯ ШЕДЕВРА ── */
   #gallery { background: rgba(243, 236, 227, 0.6); }
   .showcase-box { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
   .showcase-card { border: 1px solid var(--border); background: #ffffff; padding: 10px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.03); }
   .showcase-card img { width: 100%; height: auto; display: block; margin-bottom: 1rem; }
   .showcase-title { font-size: 0.9rem; color: var(--primary); font-weight: 500; }
-
   .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
   .gallery-item { background: #ffffff; border: 1px solid var(--border); padding: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.03); }
   .gallery-item img { width: 100%; height: auto; display: block; }
   .gallery-caption { padding: 1rem 0.5rem 0.5rem 0.5rem; font-size: 0.9rem; color: var(--muted); text-align: center; }
 
-  /* ── ПРОЦЕСС ЗАКАЗА ── */
   .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
   .step-card { position: relative; padding: 2.5rem 1.8rem; border: 1px solid var(--border); background: #ffffff; }
   .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: rgba(74,53,79,0.08); position: absolute; top: 0.3rem; right: 1rem; font-weight: 600; }
   .step-title { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.8rem; font-weight: 600; }
   .step-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
-  /* ── ФОРМА ЗАКАЗА ── */
-  #order { }
   .order-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
   .order-info p { color: var(--text); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
   .contact-list { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; }
@@ -204,7 +117,6 @@
   .contact-list a { color: var(--primary); text-decoration: none; transition: color 0.3s; font-weight: 600; }
   .contact-list a:hover { color: var(--gold); }
   .contact-icon { width: 42px; height: 42px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--primary); background: #ffffff; border-radius: 50%; }
-
   .order-form { display: flex; flex-direction: column; gap: 1.2rem; background: #ffffff; padding: 2.5rem; border: 1px solid var(--border); box-shadow: 0 15px 35px rgba(110,98,112,0.06); }
   .field { display: flex; flex-direction: column; gap: 0.4rem; }
   .field label { font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
@@ -212,7 +124,6 @@
   .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--primary); background: #ffffff; }
   .field textarea { min-height: 110px; }
 
-  /* ── ПОДВАЛ ── */
   footer { background: var(--primary); color: #ffffff; padding: 3rem 2rem; text-align: center; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--bg); margin-bottom: 1.5rem; }
   .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
@@ -273,7 +184,6 @@
         <p>Профессиональный художник и дизайнер с <strong>более чем 20-летним опытом</strong> в сфере изобразительного искусства и коммерческой иллюстрации. Живу и творю в Бишкеке, Кыргызстан.</p>
         <p>Моё творчество объединяет акрил, гуашь, портретную живопись и цифровой дизайн. Особое место занимают <strong>интерьерные картины в этно-стиле</strong> с использованием люминесцентных красок — они впитывают дневной свет и завораживающе светятся в темноте, открывая новый ночной сюжет.</p>
         <p>Каждая работа наполнена теплом, глубокой атмосферой и уважением к богатому визуальному наследию Центральной Азии.</p>
-        
         <div class="about-stats">
           <div class="stat-box">
             <div class="stat-num">20+</div>
@@ -332,7 +242,6 @@
       <div class="divider"></div>
       <p style="margin-bottom: 2rem; color: var(--muted);">Посмотрите, как одна и та же картина раскрывается с разных ракурсов: её объёмная текстура мазков днём и завораживающее неоновое свечение ночью.</p>
     </div>
-    
     <div class="showcase-box">
       <div class="showcase-card">
         <img src="yurt-detail.jpg" alt="Текстура гор">
@@ -343,12 +252,10 @@
         <div class="showcase-title">Люминесцентный эффект ночью</div>
       </div>
     </div>
-
     <div style="margin-top: 4rem;">
       <p class="section-label">Картины в интерьере</p>
       <div class="divider"></div>
     </div>
-
     <div class="gallery-grid">
       <div class="gallery-item">
         <img src="triptych.jpg" alt="Триптих в этно-стиле">
@@ -383,7 +290,6 @@
           </li>
         </ul>
       </div>
-
       <div>
         <div class="order-form">
           <div class="field">
@@ -434,3 +340,5 @@
 </script>
 </body>
 </html>
+
+
