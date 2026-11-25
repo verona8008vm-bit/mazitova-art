@@ -3,7 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MazitovaArt — Художественная стувая Вероники Мазитовой</title>
+<title>MazitovaArt — Авторские картины, этно-живопись и арт-портал Вероники Мазитовой</title>
+<meta name="description" content="Официальный сайт художника Вероники Мазитовой. Эксклюзивные этно-картины, портреты на заказ, светящиеся интерьерные полотна, иллюстрированная книга и творческие проекты." />
+<meta name="keywords" content="Вероника Мазитова, MazitovaArt, картины на заказ Бишкек, этно-живопись, купить картину, портрет на заказ, арт-студия" />
+<link rel="canonical" href="https://mazitovaartstudio.com/">
+
+<!-- Open Graph / Соцсети -->
+<meta property="og:title" content="MazitovaArt — Арт-студия Вероники Мазитовой">
+<meta property="og:description" content="Эксклюзивные этно-картины, портреты и магические светящиеся полотна ручной работы.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mazitovaartstudio.com/">
+<meta property="og:image" content="https://mazitovaartstudio.com/yurt-main.jpg">
+
+<!-- Микроразметка Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Вероника Мазитова",
+  "alternateName": "MazitovaArt",
+  "url": "https://mazitovaartstudio.com/",
+  "image": "https://mazitovaartstudio.com/artist.jpg",
+  "jobTitle": "Профессиональный художник и иллюстратор",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "MazitovaArtStudio"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Кант / Бишкек",
+    "addressCountry": "KG"
+  },
+  "sameAs": [
+    "https://instagram.com/mazitovaart"
+  ]
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -46,7 +82,7 @@
   .nav-brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
   .nav-logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--gold); }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 500; letter-spacing: 0.05em; color: var(--primary); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
   .nav-links a { color: var(--muted); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
 
@@ -94,6 +130,14 @@
   .service-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
   .service-price { margin-top: 1.5rem; font-size: 0.85rem; letter-spacing: 0.05em; color: var(--gold); font-weight: 600; }
 
+  #projects { background: rgba(243, 236, 227, 0.4); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .project-card { background: #ffffff; border: 1px solid var(--border); padding: 2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; }
+  .project-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 600; margin-bottom: 0.5rem; }
+  .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem; font-weight: 500; }
+  .project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+  .project-status { display: inline-block; padding: 0.3rem 0.8rem; background: var(--bg2); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); font-weight: 600; align-self: flex-start; }
+
   #gallery { background: rgba(243, 236, 227, 0.6); }
   .showcase-box { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
   .showcase-card { border: 1px solid var(--border); background: #ffffff; padding: 10px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.03); }
@@ -103,12 +147,6 @@
   .gallery-item { background: #ffffff; border: 1px solid var(--border); padding: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.03); }
   .gallery-item img { width: 100%; height: auto; display: block; }
   .gallery-caption { padding: 1rem 0.5rem 0.5rem 0.5rem; font-size: 0.9rem; color: var(--muted); text-align: center; }
-
-  .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
-  .step-card { position: relative; padding: 2.5rem 1.8rem; border: 1px solid var(--border); background: #ffffff; }
-  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: rgba(74,53,79,0.08); position: absolute; top: 0.3rem; right: 1rem; font-weight: 600; }
-  .step-title { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.8rem; font-weight: 600; }
-  .step-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
   .order-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
   .order-info p { color: var(--text); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
@@ -151,6 +189,7 @@
   <ul class="nav-links">
     <li><a href="#about">Об авторе</a></li>
     <li><a href="#services">Услуги</a></li>
+    <li><a href="#projects">Арт-проекты</a></li>
     <li><a href="#gallery">Галерея</a></li>
     <li><a href="#order">Контакты</a></li>
   </ul>
@@ -159,12 +198,12 @@
 <section id="hero">
   <div class="hero-grid">
     <div class="hero-text">
-      <p class="hero-eyebrow">Арт-студия Вероники Мазитовой · Бишкек</p>
+      <p class="hero-eyebrow">Международный арт-портал · Вероника Мазитова</p>
       <h1 class="hero-title">Картины в <em>этно-стиле</em>, которые оживают ночью</h1>
-      <p class="hero-sub">Эксклюзивные полотна, интерьерная живопись и портреты на заказ ручной работы. Создание уникальной атмосферы уюта и магии в вашем доме.</p>
+      <p class="hero-sub">Эксклюзивные полотна, интерьерная живопись, иллюстрированные книги и интерактивные цифровые проекты ручной работы.</p>
       <div class="hero-cta">
         <a href="#order" class="btn btn-primary">Заказать картину</a>
-        <a href="#services" class="btn btn-outline">Услуги и цены</a>
+        <a href="#projects" class="btn btn-outline">Исследовать проекты</a>
       </div>
     </div>
     <div class="hero-image-wrapper">
@@ -181,9 +220,8 @@
         <p class="section-label">О художнике</p>
         <h2 class="section-title">Вероника <em>Мазитова</em></h2>
         <div class="divider"></div>
-        <p>Профессиональный художник и дизайнер с <strong>более чем 20-летним опытом</strong> в сфере изобразительного искусства и коммерческой иллюстрации. Живу и творю в Бишкеке, Кыргызстан.</p>
-        <p>Моё творчество объединяет акрил, гуашь, портретную живопись и цифровой дизайн. Особое место занимают <strong>интерьерные картины в этно-стиле</strong> с использованием люминесцентных красок — они впитывают дневной свет и завораживающе светятся в темноте, открывая новый ночной сюжет.</p>
-        <p>Каждая работа наполнена теплом, глубокой атмосферой и уважением к богатому визуальному наследию Центральной Азии.</p>
+        <p>Профессиональный художник и дизайнер с <strong>более чем 20-летним опытом</strong> в сфере визуального искусства. Живу и творю в Кант / Бишкек, создавая полотна для коллекционеров по всему миру.</p>
+        <p>Моё творчество объединяет станковую живопись, этно-символизм, textured relief work и современные цифровые медиа. Особое место занимают <strong>интерьерные картины</strong> со светонакопительными элементами, которые меняют атмосферу комнаты с наступлением темноты.</p>
         <div class="about-stats">
           <div class="stat-box">
             <div class="stat-num">20+</div>
@@ -191,7 +229,7 @@
           </div>
           <div class="stat-box">
             <div class="stat-num">100%</div>
-            <div class="stat-label">Ручная работа</div>
+            <div class="stat-label">Авторская работа</div>
           </div>
         </div>
       </div>
@@ -207,28 +245,57 @@
 <section id="services">
   <div class="container">
     <div>
-      <p class="section-label">Что я создаю</p>
-      <h2 class="section-title">Услуги и <em>стоимость</em></h2>
+      <p class="section-label">Направления студии</p>
+      <h2 class="section-title">Услуги и <em>произведения</em></h2>
       <div class="divider"></div>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <span class="service-icon">🖼</span>
         <div class="service-name">Этно-картины</div>
-        <p class="service-desc">Авторские полотна (акрил, холст, текстурная паста). Пейзажи, атмосферные сюжеты с юртами и горами. Возможно добавление светящихся элементов.</p>
-        <div class="service-price">Цена зависит от размера</div>
+        <p class="service-desc">Авторские полотна (акрил, холст, текстурная паста). Пейзажи, символизм Центральной Азии и светящиеся элементы.</p>
+        <div class="service-price">Под заказ / Оригиналы</div>
       </div>
       <div class="service-card">
         <span class="service-icon">🎨</span>
         <div class="service-name">Портреты</div>
-        <p class="service-desc">Живописные и цифровые портреты людей и домашних животных по вашим фотографиям. Выразительные, живые, идеальные для подарка близким.</p>
+        <p class="service-desc">Индивидуальные живописные и цифровые портреты по вашим фотографиям, наполненные теплом и характером.</p>
         <div class="service-price">Индивидуальный расчет</div>
       </div>
       <div class="service-card">
         <span class="service-icon">✏️</span>
-        <div class="service-name">Иллюстрации</div>
-        <p class="service-desc">Разработка уникальных раскрасок для детей и взрослых, создание орнаментальных, сказочных сюжетов, логотипов и коммерческой графики.</p>
-        <div class="service-price">Для печати и веба</div>
+        <div class="service-name">Цифровое искусство</div>
+        <p class="service-desc">Иллюстрации, разработка авторских цифровых продуктов, книг и интерактивных творческих концептов.</p>
+        <div class="service-price">Digital & Print</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div>
+      <p class="section-label">Экосистема портала</p>
+      <h2 class="section-title">Авторские <em>проекты</em></h2>
+      <div class="divider"></div>
+      <p style="margin-bottom: 1rem; color: var(--muted);">Скоро на сайте: цифровая книга и интерактивная арт-студия.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div>
+          <div class="project-tag">Книга · PDF ($4)</div>
+          <h3 class="project-title">Космические приключения кота Морти</h3>
+          <p class="project-desc">Увлекательная иллюстрированная сказка о путешествиях космического кота Морти с планеты Фиола и его дружбе с земным мальчиком Сашей. Двуязычное издание (RU/EN).</p>
+        </div>
+        <span class="project-status">Скоро в продаже</span>
+      </div>
+      <div class="project-card">
+        <div>
+          <div class="project-tag">Интерактивная игра</div>
+          <h3 class="project-title">Студия рельефа и света</h3>
+          <p class="project-desc">Цифровое рисовальное приложение для детей и взрослых: тактильный 3D-рельеф мастихином, планеты Морти и волшебное свечение в темноте прямо в браузере.</p>
+        </div>
+        <span class="project-status">В разработке</span>
       </div>
     </div>
   </div>
@@ -237,10 +304,10 @@
 <section id="gallery">
   <div class="container">
     <div>
-      <p class="section-label">Портфолио одного шедевра</p>
+      <p class="section-label">Портфолио</p>
       <h2 class="section-title">Магия в <em>деталях</em></h2>
       <div class="divider"></div>
-      <p style="margin-bottom: 2rem; color: var(--muted);">Посмотрите, как одна и та же картина раскрывается с разных ракурсов: её объёмная текстура мазков днём и завораживающее неоновое свечение ночью.</p>
+      <p style="margin-bottom: 2rem; color: var(--muted);">Объёмная текстура мазков днём и завораживающее неоновое свечение в темноте.</p>
     </div>
     <div class="showcase-box">
       <div class="showcase-card">
@@ -253,7 +320,7 @@
       </div>
     </div>
     <div style="margin-top: 4rem;">
-      <p class="section-label">Картины в интерьере</p>
+      <p class="section-label">Галерея работ</p>
       <div class="divider"></div>
     </div>
     <div class="gallery-grid">
@@ -278,7 +345,7 @@
     </div>
     <div class="order-grid">
       <div class="order-info">
-        <p>Готовы заказать картину, портрет или эксклюзивную иллюстрацию? Напишите мне прямо сейчас. Я помогу определиться с размером, который идеально впишется в ваш интерьер.</p>
+        <p>Готовы заказать картину, портрет или обсудить сотрудничество? Напишите мне в WhatsApp или Instagram, и мы подберем идеальное решение.</p>
         <ul class="contact-list">
           <li>
             <div class="contact-icon">📸</div>
@@ -297,16 +364,17 @@
             <input type="text" id="fname" placeholder="Имя...">
           </div>
           <div class="field">
-            <label>Что вы хотите заказать?</label>
+            <label>Что вас интересует?</label>
             <select id="fservice">
               <option value="Картина в этно-стиле (акрил)">Картина в этно-стиле (акрил)</option>
               <option value="Портрет по фотографии">Портрет по фотографии</option>
-              <option value="Иллюстрация или раскраски">Иллюстрация или раскраски</option>
+              <option value="Книга о коте Морти / Цифровой продукт">Книга о коте Морти / Цифровой продукт</option>
+              <option value="Другое / Сотрудничество">Другое / Сотрудничество</option>
             </select>
           </div>
           <div class="field">
             <label>Пожелания к работе</label>
-            <textarea id="fdesc" placeholder="Примерный размер холста, сюжет..."></textarea>
+            <textarea id="fdesc" placeholder="Примерный размер холста, идея или вопрос..."></textarea>
           </div>
           <div class="form-submit">
             <button class="btn btn-primary" onclick="redirectToWhatsApp()" style="width:100%;">Обсудить в WhatsApp</button>
@@ -322,6 +390,7 @@
   <div class="footer-links">
     <a href="#about">Об авторе</a>
     <a href="#services">Услуги</a>
+    <a href="#projects">Проекты</a>
     <a href="#gallery">Галерея</a>
     <a href="#order">Контакты</a>
   </div>
@@ -333,12 +402,10 @@
     const name    = document.getElementById('fname').value.trim() || 'Гость';
     const service = document.getElementById('fservice').value;
     const desc    = document.getElementById('fdesc').value.trim();
-    let text = `Здравствуйте, Вероника! Меня зовут ${name}. Я хочу обсудить заказ: ${service}.`;
+    let text = `Здравствуйте, Вероника! Меня зовут ${name}. Хочу обсудить: ${service}.`;
     if(desc) { text += `\n\nПожелания: ${desc}`; }
     window.open(`https://wa.me/996709803789?text=${encodeURIComponent(text)}`, '_blank');
   }
 </script>
 </body>
 </html>
-
-
