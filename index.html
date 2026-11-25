@@ -139,14 +139,18 @@
   .project-status { display: inline-block; padding: 0.3rem 0.8rem; background: var(--bg2); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); font-weight: 600; align-self: flex-start; }
 
   #gallery { background: rgba(243, 236, 227, 0.6); }
-  .showcase-box { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
-  .showcase-card { border: 1px solid var(--border); background: #ffffff; padding: 10px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.03); }
-  .showcase-card img { width: 100%; height: auto; display: block; margin-bottom: 1rem; }
-  .showcase-title { font-size: 0.9rem; color: var(--primary); font-weight: 500; }
-  .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
-  .gallery-item { background: #ffffff; border: 1px solid var(--border); padding: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.03); }
-  .gallery-item img { width: 100%; height: auto; display: block; }
-  .gallery-caption { padding: 1rem 0.5rem 0.5rem 0.5rem; font-size: 0.9rem; color: var(--muted); text-align: center; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+  .art-card { background: #ffffff; border: 1px solid var(--border); padding: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; }
+  .art-img-box { position: relative; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border); }
+  .art-img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .art-img:hover { transform: scale(1.03); }
+  .art-badge { position: absolute; top: 10px; right: 10px; background: var(--primary); color: #ffffff; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.8rem; font-weight: 500; }
+  .art-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--primary); margin-bottom: 0.4rem; font-weight: 600; }
+  .art-meta { font-size: 0.8rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.8rem; }
+  .art-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
+  .art-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: auto; }
+  .art-price { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--primary); font-weight: 600; }
+  .btn-sm { padding: 0.6rem 1.2rem; font-size: 0.75rem; }
 
   .order-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
   .order-info p { color: var(--text); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem; }
@@ -175,7 +179,7 @@
     #hero { padding: 7rem 1.5rem 3rem 1.5rem; }
     .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
     .hero-cta { justify-content: center; }
-    .about-grid, .order-grid, .showcase-box, .gallery-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-grid, .order-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>
 </head>
@@ -189,8 +193,8 @@
   <ul class="nav-links">
     <li><a href="#about">Об авторе</a></li>
     <li><a href="#services">Услуги</a></li>
-    <li><a href="#projects">Арт-проекты</a></li>
-    <li><a href="#gallery">Галерея</a></li>
+    <li><a href="#projects">Проекты</a></li>
+    <li><a href="#gallery">Этно-картины</a></li>
     <li><a href="#order">Контакты</a></li>
   </ul>
 </nav>
@@ -202,8 +206,8 @@
       <h1 class="hero-title">Картины в <em>этно-стиле</em>, которые оживают ночью</h1>
       <p class="hero-sub">Эксклюзивные полотна, интерьерная живопись, иллюстрированные книги и интерактивные цифровые проекты ручной работы.</p>
       <div class="hero-cta">
-        <a href="#order" class="btn btn-primary">Заказать картину</a>
-        <a href="#projects" class="btn btn-outline">Исследовать проекты</a>
+        <a href="#gallery" class="btn btn-primary">Смотреть картины</a>
+        <a href="#order" class="btn btn-outline">Заказать работу</a>
       </div>
     </div>
     <div class="hero-image-wrapper">
@@ -304,33 +308,147 @@
 <section id="gallery">
   <div class="container">
     <div>
-      <p class="section-label">Портфолио</p>
-      <h2 class="section-title">Магия в <em>деталях</em></h2>
-      <div class="divider"></div>
-      <p style="margin-bottom: 2rem; color: var(--muted);">Объёмная текстура мазков днём и завораживающее неоновое свечение в темноте.</p>
-    </div>
-    <div class="showcase-box">
-      <div class="showcase-card">
-        <img src="yurt-detail.jpg" alt="Текстура гор">
-        <div class="showcase-title">Рельефные мазки и текстура гор днём</div>
-      </div>
-      <div class="showcase-card">
-        <img src="yurt-glow.jpg" alt="Свечение в темноте">
-        <div class="showcase-title">Люминесцентный эффект ночью</div>
-      </div>
-    </div>
-    <div style="margin-top: 4rem;">
       <p class="section-label">Галерея работ</p>
+      <h2 class="section-title">Этно-картины и <em>коллекции</em></h2>
       <div class="divider"></div>
+      <p style="margin-bottom: 2rem; color: var(--muted);">Объёмная текстура мазков днём и завораживающее неоновое свечение в темноте. Каждая работа хранит ценности и наследие Кыргызстана.</p>
     </div>
+
     <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="triptych.jpg" alt="Триптих в этно-стиле">
-        <div class="gallery-caption">Серия этно-картин в мастерской</div>
+      <!-- 1 -->
+      <div class="art-card">
+        <div>
+          <div class="art-img-box">
+            <img src="yurt-main.jpg" alt="Этнозакат" class="art-img">
+            <span class="art-badge">Светится зелёным</span>
+          </div>
+          <h3 class="art-title">«Этнозакат» / «Душа кочевника»</h3>
+          <div class="art-meta">Холст 60×80 см · Акрил, текстурная паста</div>
+          <p class="art-desc">Абсолютный триумф монументальной живописи и современных технологий. Образ гор, юрты и птицы в лучах заката. Ночью картина оживает магическим зелёным свечением.</p>
+        </div>
+        <div class="art-footer">
+          <span class="art-price">Оригинал</span>
+          <a href="#order" class="btn btn-primary btn-sm" onclick="selectArt('Этнозакат')">Заказать / Купить</a>
+        </div>
       </div>
-      <div class="gallery-item">
-        <img src="yurt-main.jpg" alt="Этно-пейзаж Юрта">
-        <div class="gallery-caption">«Где холст становится историей...»</div>
+
+      <!-- 2 -->
+      <div class="art-card">
+        <div>
+          <div class="art-img-box">
+            <img src="triptych.jpg" alt="Сияние Эдельвейса" class="art-img">
+            <span class="art-badge">Светится зелёным</span>
+          </div>
+          <h3 class="art-title">«Сияние Эдельвейса»</h3>
+          <div class="art-meta">Холст 40×50 см · Рельефная техника</div>
+          <p class="art-desc">Уникальная интерьерная картина. Эдельвейс — символ чистоты и стойкости, который всегда будет согревать вашу душу своим сиянием в темноте.</p>
+        </div>
+        <div class="art-footer">
+          <span class="art-price">Оригинал</span>
+          <a href="#order" class="btn btn-primary btn-sm" onclick="selectArt('Сияние Эдельвейса')">Заказать / Купить</a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="art-card">
+        <div>
+          <div class="art-img-box">
+            <img src="yurt-detail.jpg" alt="Гранаттар" class="art-img">
+            <span class="art-badge">Этнофрукты · Синий свет</span>
+          </div>
+          <h3 class="art-title">«Гранаттар» («Этнофрукты»)</h3>
+          <div class="art-meta">Холст 35×75 см · Акрил, текстура</div>
+          <p class="art-desc">Гранат — один из любимых фруктов Кыргызстана, символ изобилия, плодородия и жизненной силы. В темноте светится красивым голубым светом.</p>
+        </div>
+        <div class="art-footer">
+          <span class="art-price">10 000 сом</span>
+          <a href="#order" class="btn btn-primary btn-sm" onclick="selectArt('Гранаттар')">Купить</a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="art-card">
+        <div>
+          <div class="art-img-box">
+            <img src="yurt-glow.jpg" alt="Слива" class="art-img">
+            <span class="art-badge">Этнофрукты · Синий свет</span>
+          </div>
+          <h3 class="art-title">«Слива» («Этнофрукты»)</h3>
+          <div class="art-meta">Холст 35×75 см · Акрил, текстурная паста</div>
+          <p class="art-desc">Символ стойкости, обновления и здоровья. Простая радость из собственного сада превращается в живой символ красоты и плодородия.</p>
+        </div>
+        <div class="art-footer">
+          <span class="art-price">10 000 сом</span>
+          <a href="#order" class="btn btn-primary btn-sm" onclick="selectArt('Слива')">Купить</a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="art-card">
+        <div>
+          <div class="art-img-box">
+            <img src="artist.jpg" alt="Алмалар" class="art-img">
+            <span class="art-badge">Этножемиштер · Синий свет</span>
+          </div>
+          <h3 class="art-title">«Алмалар» («Этножемиштер»)</h3>
+          <div class="art-meta">Холст 35×75 см · Акрил, текстурная паста</div>
+          <p class="art-desc">Өз багыбызда өскөн Кыргызстандын берешен жемиштери. Молчулуктун, берекенин жана жаратылыштын жашоо күчүнүн символу!</p>
+        </div>
+        <div class="art-footer">
+          <span class="art-price">10 000 сом</span>
+          <a href="#order" class="btn btn-primary btn-sm" onclick="selectArt('Алмалар')">Купить</a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="art-card">
+        <div>
+          <div class="art-img-box">
+            <img src="yurt-main.jpg" alt="Сердце Иссык-Куля" class="art-img">
+            <span class="art-badge">Этно-символизм</span>
+          </div>
+          <h3 class="art-title">«Сердце Иссык-Куля: Неукротимая Сила»</h3>
+          <div class="art-meta">Холст 40×50 см · Авторская техника</div>
+          <p class="art-desc">Первозданная сила кыргызского коня и монументальная красота озера Иссык-Куль. Непробиваемая энергия жизни и дух свободы.</p>
+        </div>
+        <div class="art-footer">
+          <span class="art-price">Частная колл.</span>
+          <a href="#order" class="btn btn-primary btn-sm" onclick="selectArt('Сердце Иссык-Куля')">Заказать похожую</a>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="art-card">
+        <div>
+          <div class="art-img-box">
+            <img src="triptych.jpg" alt="Танец природы" class="art-img">
+            <span class="art-badge">Триптих</span>
+          </div>
+          <h3 class="art-title">«Танец природы» (Триптих)</h3>
+          <div class="art-meta">Холст 90×60 см · Этно-экспрессионизм</div>
+          <p class="art-desc">Три танцующие женщины в традиционных костюмах на фоне пейзажей Центральной Азии. Мост между прошлым и настоящим.</p>
+        </div>
+        <div class="art-footer">
+          <span class="art-price">Под заказ</span>
+          <a href="#order" class="btn btn-primary btn-sm" onclick="selectArt('Танец природы')">Заказать триптих</a>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="art-card">
+        <div>
+          <div class="art-img-box">
+            <img src="yurt-detail.jpg" alt="Шелковый путь" class="art-img">
+            <span class="art-badge">Текстурный песок</span>
+          </div>
+          <h3 class="art-title">«Шелковый путь под сиянием полумесяца»</h3>
+          <div class="art-meta">Холст · Акрил, текстурный песок</div>
+          <p class="art-desc">Караван, размеренно идущий сквозь золотые барханы под сиянием полумесяца. Главное волшебство картины раскрывается в темноте!</p>
+        </div>
+        <div class="art-footer">
+          <span class="art-price">Оригинал</span>
+          <a href="#order" class="btn btn-primary btn-sm" onclick="selectArt('Шелковый путь')">Заказать / Купить</a>
+        </div>
       </div>
     </div>
   </div>
@@ -345,7 +463,7 @@
     </div>
     <div class="order-grid">
       <div class="order-info">
-        <p>Готовы заказать картину, портрет или обсудить сотрудничество? Напишите мне в WhatsApp или Instagram, и мы подберем идеальное решение.</p>
+        <p>Готовы заказать картину, приобрести готовую работу из галереи или обсудить индивидуальный проект? Напишите мне в WhatsApp или Instagram.</p>
         <ul class="contact-list">
           <li>
             <div class="contact-icon">📸</div>
@@ -364,17 +482,17 @@
             <input type="text" id="fname" placeholder="Имя...">
           </div>
           <div class="field">
-            <label>Что вас интересует?</label>
+            <label>Интересующая картина / Услуга</label>
             <select id="fservice">
-              <option value="Картина в этно-стиле (акрил)">Картина в этно-стиле (акрил)</option>
+              <option value="Покупка картины из галереи">Покупка картины из галереи</option>
+              <option value="Картина в этно-стиле (на заказ)">Картина в этно-стиле (на заказ)</option>
               <option value="Портрет по фотографии">Портрет по фотографии</option>
               <option value="Книга о коте Морти / Цифровой продукт">Книга о коте Морти / Цифровой продукт</option>
-              <option value="Другое / Сотрудничество">Другое / Сотрудничество</option>
             </select>
           </div>
           <div class="field">
             <label>Пожелания к работе</label>
-            <textarea id="fdesc" placeholder="Примерный размер холста, идея или вопрос..."></textarea>
+            <textarea id="fdesc" placeholder="Название картины, размер или ваши идеи..."></textarea>
           </div>
           <div class="form-submit">
             <button class="btn btn-primary" onclick="redirectToWhatsApp()" style="width:100%;">Обсудить в WhatsApp</button>
@@ -391,19 +509,24 @@
     <a href="#about">Об авторе</a>
     <a href="#services">Услуги</a>
     <a href="#projects">Проекты</a>
-    <a href="#gallery">Галерея</a>
+    <a href="#gallery">Этно-картины</a>
     <a href="#order">Контакты</a>
   </div>
   <p class="footer-copy">© 2026 MazitovaArt · Вероника Мазитова · Бишкек, Кыргызстан</p>
 </footer>
 
 <script>
+  function selectArt(artName) {
+    document.getElementById('fservice').value = 'Покупка картины из галереи';
+    document.getElementById('fdesc').value = `Здравствуйте! Меня интересует картина "${artName}". Хочу узнать подробности.`;
+  }
+
   function redirectToWhatsApp() {
     const name    = document.getElementById('fname').value.trim() || 'Гость';
     const service = document.getElementById('fservice').value;
     const desc    = document.getElementById('fdesc').value.trim();
     let text = `Здравствуйте, Вероника! Меня зовут ${name}. Хочу обсудить: ${service}.`;
-    if(desc) { text += `\n\nПожелания: ${desc}`; }
+    if(desc) { text += `\n\nДетали: ${desc}`; }
     window.open(`https://wa.me/996709803789?text=${encodeURIComponent(text)}`, '_blank');
   }
 </script>
